@@ -2,6 +2,7 @@
 
 const inquirer = require("inquirer");
 const shell = require("shelljs");
+const chalk = require("chalk");
 
 const path = process.cwd();
 const path2UseTests = "C:/Users/Andre/Desktop/testes";
@@ -20,17 +21,16 @@ inquirer.prompt(questionNameOfTheProject).then((answersName) =>{//responses
                 if(answersTS.typescript === 'Yes'){
                     //If is vanilla and uses typescript
                 }else{
-                    //console.log(answersName.nameOfProject)
                     shell.exec(`mkdir ${answersName.nameOfProject}`);
-                    console.log('Created a folder for the project');
-                    //shell.exec(`git clone ${links.get('Vanilla')} ${answersName.nameOfProject}`);
-                    console.log(`Cloned started files into ${answersName.nameOfProject}`);
+                    console.log(chalk.green('Created a folder for the project'));
+                    shell.exec(`git clone ${links.get('Vanilla')} ${answersName.nameOfProject}`);
+                    console.log(chalk.magenta(`Cloned started files into ${answersName.nameOfProject}`));
                     shell.cd(`${path2UseTests}/${answersName.nameOfProject}`);
                     shell.exec("code .");
-                    console.log('Happy hacking');
+                    console.log(chalk.green('Happy hacking'));
                 }
             }).catch((err) =>{//if ocurrers errors
-                
+                console.log(error('Error getting answer for typescript!\n[ERROR]: ' + err));
             })
         }else if(answersFramework.framework === 'React'){//If it's react
             //Ask if uses typescript
@@ -41,7 +41,7 @@ inquirer.prompt(questionNameOfTheProject).then((answersName) =>{//responses
                     //If is react and do not use typescript 
                 }
             }).catch((err) =>{//if ocurrers errors
-
+                console.log(error('Error getting answer for typescript!\n[ERROR]: ' + err));
             })
         }else if(answersFramework.framework === 'Angular'){//If it's angular
             //Ask if uses typescript
@@ -52,7 +52,7 @@ inquirer.prompt(questionNameOfTheProject).then((answersName) =>{//responses
                     //If is angular and do not use typescript 
                 }
             }).catch((err) =>{//if ocurrers errors
-
+                console.log(error('Error getting answer for typescript!\n[ERROR]: ' + err));
             })
         }else if(answersFramework.framework === 'Svelte'){//If it's svelt
             //Ask if uses typescript
@@ -63,7 +63,7 @@ inquirer.prompt(questionNameOfTheProject).then((answersName) =>{//responses
                     //If is svelt and do not use typescript 
                 }
             }).catch((err) =>{//if ocurrers errors
-
+                console.log(error('Error getting answer for typescript!\n[ERROR]: ' + err));
             })
         }else if(answersFramework.framework === 'VueJS'){//If it's VueJS
             //Ask if uses typescript
@@ -74,16 +74,16 @@ inquirer.prompt(questionNameOfTheProject).then((answersName) =>{//responses
                     //If is VueJS and do not use typescript 
                 }
             }).catch((err) =>{//if ocurrers errors
-
+                console.log(error('Error getting answer for typescript!\n[ERROR]: ' + err));
             })
         }
 
         
     }).catch((err) =>{//if ocurrers errors
-
+        console.log(error('Error getting answer for framework!\n[ERROR]: ' + err));
     })
     }).catch((err) =>{//if ocurrers errors
-    
+        console.log(error('Error getting answer for the name of the project!\n[ERROR]: ' + err));
     })
 
 
