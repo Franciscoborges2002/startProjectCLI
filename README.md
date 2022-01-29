@@ -1,0 +1,1 @@
+# CLI tool to start a JS project
