@@ -17,7 +17,9 @@
   "author": "Francisco Borges",
   "license": "MIT",
   "dependencies": {
+    "chalk-animation": "^1.6.0",
     "inquirer": "^8.2.0",
+    "nanospinner": "^1.0.0",
     "shelljs": "^0.8.5"
   },
   "devDependencies": {

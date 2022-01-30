@@ -11,7 +11,7 @@ const questionFramework = [
         type: 'list',
         name: 'framework',
         message: 'Choose the JS framework which you are using:',
-        choices: ['Vanilla', 'React', 'Angular', 'Svelte', 'VueJS']
+        choices: ['Vanilla', 'React', 'NextJS', 'Svelte', 'VueJS']
     }
 ];
 
