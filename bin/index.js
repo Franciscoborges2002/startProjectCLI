@@ -54,7 +54,7 @@ inquirer.prompt(questionNameOfTheProject).then((answersName) =>{//responses
             })
         }else if(answersFramework.framework === 'React'){//If it's react
             //Ask if uses typescript
-            inquirer.prompt(questionTS).then((answersTS) =>{//responses
+            inquirer.prompt(questionTS).then(async (answersTS) =>{//responses
                 if(answersTS.typescript === 'Yes'){
                     shell.exec(`mkdir ${answersName.nameOfProject}`);
                     spinnerFolder.start();
@@ -87,7 +87,7 @@ inquirer.prompt(questionNameOfTheProject).then((answersName) =>{//responses
             })
         }else if(answersFramework.framework === 'NextJS'){//If it's angular
             //Ask if uses typescript
-            inquirer.prompt(questionTS).then((answersTS) =>{//responses
+            inquirer.prompt(questionTS).then(async (answersTS) =>{//responses
                 if(answersTS.typescript === 'Yes'){
                     shell.exec(`mkdir ${answersName.nameOfProject}`);
                     spinnerFolder.start();
