@@ -11,7 +11,7 @@ const questionFramework = [
         type: 'list',
         name: 'framework',
         message: 'Choose the JS framework which you are using:',
-        choices: ['Vanilla', 'React', 'NextJS', 'Svelte', 'VueJS']
+        choices: ['Vanilla', 'React', 'NextJS', 'Svelte', 'VueJS', 'infoAbout']
     }
 ];
 
@@ -24,6 +24,16 @@ const questionTS = [
     }
 ]
 
+const questionInfoAbout = [
+    {
+        type: 'list',
+        name: 'infoAbout',
+        message: 'What you want to know about',
+        choices: ['Links Used']
+    }
+]
+
 module.exports.questionNameOfTheProject = questionNameOfTheProject;
 module.exports.questionFramework = questionFramework;
 module.exports.questionTS = questionTS;
+module.exports.questionInfoAbout = questionInfoAbout;

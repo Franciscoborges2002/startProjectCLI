@@ -1,6 +1,6 @@
 let links = new Map([
     ['Vanilla', 'https://github.com/Franciscoborges2002/vanilla-js-template'],
-    ['VanillaTS', ''],
+    ['VanillaTS', 'https://github.com/BUR4KBEY/typescript-template'],
     ['React', 'https://github.com/YashKumarVerma/react-tailwind-template'],
     ['ReactTS', 'https://github.com/GKaszewski/react-tailwind-typescript-template'],
     ['NextJS', 'https://github.com/Neeraj1005/Nextjs-tailwind-template'],
