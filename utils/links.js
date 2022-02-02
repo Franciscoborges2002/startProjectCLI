@@ -6,7 +6,7 @@ let links = new Map([
     ['NextJS', 'https://github.com/Neeraj1005/Nextjs-tailwind-template'],
     ['NextJSTS', 'https://github.com/avneesh0612/next-starter'],
     ['Svelte', 'https://github.com/jhanca-vm/Svelte-Tailwind'],
-    ['Vue', 'https://github.com/web2033/vite-vue3-tailwind-starter'],
+    ['VueJS', 'https://github.com/web2033/vite-vue3-tailwind-starter'],
 ])
 
 module.exports = links;

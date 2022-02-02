@@ -17,6 +17,7 @@ const glitchHacking = chalkAnimator.glitch(chalk.green('Happy hacking')).stop();
 const spinnerFolder = nanospinner.createSpinner('Creating the folder for the project');
 const redirecting2TheLinks = chalkAnimation.neon('Sending you to see the links').stop();
 
+
 //Ask the name of the project
 inquirer.prompt(questionNameOfTheProject).then((answersName) =>{//responses
     //Ask the framework
@@ -26,129 +27,48 @@ inquirer.prompt(questionNameOfTheProject).then((answersName) =>{//responses
             //Ask if uses typescript
             inquirer.prompt(questionTS).then(async (answersTS) =>{//responses
                 if(answersTS.typescript === 'Yes'){
-                    shell.exec(`mkdir ${answersName.nameOfProject}`);
-                    spinnerFolder.start();
-                    await sleep();
-                    spinnerFolder.success();
-                    shell.exec(`git clone ${links.get('VanillaTS')} ${answersName.nameOfProject}`);
-                    console.log(chalk.magenta(`Cloned started files into ${answersName.nameOfProject}`));
-                    shell.cd(`${path}/${answersName.nameOfProject}`);
-                    glitchHacking.start();
-                    await sleep();
-                    glitchHacking.stop();
-                    shell.exec("code .");
-                    shell.exec("exit");
+                    createProject(answersName.nameOfProject, 'VanillaTS');
                 }else{
-                    shell.exec(`mkdir ${answersName.nameOfProject}`);
-                    spinnerFolder.start();
-                    await sleep();
-                    spinnerFolder.success();
-                    shell.exec(`git clone ${links.get('Vanilla')} ${answersName.nameOfProject}`);
-                    console.log(chalk.magenta(`Cloned started files into ${answersName.nameOfProject}`));
-                    shell.cd(`${path}/${answersName.nameOfProject}`);
-                    glitchHacking.start();
-                    await sleep();
-                    glitchHacking.stop();
-                    shell.exec("code .");
-                    shell.exec("exit");
+                    createProject(answersName.nameOfProject, 'Vanilla');
                 }
             }).catch((err) =>{//if ocurrers errors
-                console.log(error('Error getting answer for typescript!\n[ERROR]: ' + err));
+                console.log(error('Error getting answer for typescript!') + '\n[ERROR]: ' + err);
             })
         }else if(answersFramework.framework === 'React'){//If it's react
             //Ask if uses typescript
             inquirer.prompt(questionTS).then(async (answersTS) =>{//responses
                 if(answersTS.typescript === 'Yes'){
-                    shell.exec(`mkdir ${answersName.nameOfProject}`);
-                    spinnerFolder.start();
-                    await sleep();
-                    spinnerFolder.success();
-                    shell.exec(`git clone ${links.get('ReactTS')} ${answersName.nameOfProject}`);
-                    console.log(chalk.magenta(`Cloned started files into ${answersName.nameOfProject}`));
-                    shell.cd(`${path}/${answersName.nameOfProject}`);
-                    shell.exec(`npm i`);
-                    glitchHacking.start();
-                    madeBy.start();
-                    await sleep();
-                    glitchHacking.stop();
-                    shell.exec("code .");
-                    shell.exec("exit");
+                    createProject(answersName.nameOfProject, 'ReactJS');
                 }else{
-                    shell.exec(`mkdir ${answersName.nameOfProject}`);
-                    spinnerFolder.start();
-                    await sleep();
-                    spinnerFolder.success();
-                    shell.exec(`git clone ${links.get('React')} ${answersName.nameOfProject}`);
-                    console.log(chalk.magenta(`Cloned started files into ${answersName.nameOfProject}`));
-                    shell.cd(`${path}/${answersName.nameOfProject}`);
-                    shell.exec(`npm i`);
-                    glitchHacking.start();
-                    await sleep();
-                    glitchHacking.stop();
-                    shell.exec("code .");
-                    shell.exec("exit");
+                    createProject(answersName.nameOfProject, 'React');
                 }
             }).catch((err) =>{//if ocurrers errors
-                console.log(error('Error getting answer for typescript!\n[ERROR]: ' + err));
+                console.log(error('Error getting answer for typescript!') + '\n[ERROR]: ' + err);
             })
         }else if(answersFramework.framework === 'NextJS'){//If it's angular
             //Ask if uses typescript
             inquirer.prompt(questionTS).then(async (answersTS) =>{//responses
                 if(answersTS.typescript === 'Yes'){
-                    shell.exec(`mkdir ${answersName.nameOfProject}`);
-                    spinnerFolder.start();
-                    await sleep();
-                    spinnerFolder.success();
-                    shell.exec(`git clone ${links.get('NextJSTS')} ${answersName.nameOfProject}`);
-                    console.log(chalk.magenta(`Cloned started files into ${answersName.nameOfProject}`));
-                    shell.cd(`${path}/${answersName.nameOfProject}`);
-                    shell.exec(`npm i`);
-                    glitchHacking.start();
-                    await sleep();
-                    glitchHacking.stop();
-                    shell.exec("code .");
-                    shell.exec("exit");
+                    createProject(answersName.nameOfProject, 'NextJSTS');
                 }else{
-                    shell.exec(`mkdir ${answersName.nameOfProject}`);
-                    spinnerFolder.start();
-                    await sleep();
-                    spinnerFolder.success();
-                    shell.exec(`git clone ${links.get('NextJS')} ${answersName.nameOfProject}`);
-                    console.log(chalk.magenta(`Cloned started files into ${answersName.nameOfProject}`));
-                    shell.cd(`${path}/${answersName.nameOfProject}`);
-                    shell.exec(`npm i`);
-                    shell.exec("code .");
-                    glitchHacking.start();
-                    await sleep();
-                    glitchHacking.stop();
-                    shell.exec("code .");
-                    shell.exec("exit");
+                    createProject(answersName.nameOfProject, 'NextJS');
                 }
             }).catch((err) =>{//if ocurrers errors
-                console.log(error('Error getting answer for typescript!\n[ERROR]: ' + err));
+                console.log(error('Error getting answer for typescript!') + '\n[ERROR]: ' + err);
             })
         }else if(answersFramework.framework === 'Svelte'){//If it's svelt
             //Ask if uses typescript
-            inquirer.prompt(questionTS).then((answersTS) =>{//responses
+            inquirer.prompt(questionTS).then(async (answersTS) =>{//responses
                 if(answersTS.typescript === 'Yes'){
                     //If is svelt and uses typescript
                 }else{
                     //If is svelt and do not use typescript 
                 }
             }).catch((err) =>{//if ocurrers errors
-                console.log(error('Error getting answer for typescript!\n[ERROR]: ' + err));
+                console.log(error('Error getting answer for typescript!') + '\n[ERROR]: ' + err);
             })
         }else if(answersFramework.framework === 'VueJS'){//If it's VueJS
-            //Ask if uses typescript
-            inquirer.prompt(questionTS).then((answersTS) =>{//responses
-                if(answersTS.typescript === 'Yes'){
-                    //If is VueJS and uses typescript
-                }else{
-                    //If is VueJS and do not use typescript 
-                }
-            }).catch((err) =>{//if ocurrers errors
-                console.log(error('Error getting answer for typescript!\n[ERROR]: ' + err));
-            })
+            createProject(answersName.nameOfProject, 'VueJS');
         }else{
             inquirer.prompt(questionInfoAbout).then(async (answerInfoAbout)=>{
                 if(answerInfoAbout.infoAbout == 'Links Used'){
@@ -159,14 +79,31 @@ inquirer.prompt(questionNameOfTheProject).then((answersName) =>{//responses
                     shell.exec('exit');
                 }
             }).catch((err)=>{
-                console.log(chalk.bold.red("error ocurred.\n" + err));
+                console.log(chalk.bold.red("Error while getting answer for sowing info.")+ '\n[ERROR]: ' + err);
             })
         }
 
         
     }).catch((err) =>{//if ocurrers errors
-        console.log(chalk.bold.red('Error getting answer for framework!\n[ERROR]: ' + err));
+        console.log(chalk.bold.red('Error getting answer for framework!')+ '\n[ERROR]: ' + err);
     })
     }).catch((err) =>{//if ocurrers errors
-        console.log(chalk.bold.red('Error getting answer for the name of the project!\n[ERROR]: ' + err));
-    })
+        console.log(chalk.bold.red('Error getting answer for the name of the project!') + '\n[ERROR]: ' + err);
+})
+
+async function createProject(nameOfProject, link){
+    shell.exec(`mkdir ${nameOfProject}`);
+    spinnerFolder.start();
+     await sleep();
+    spinnerFolder.success();
+    shell.exec(`git clone ${links.get(link)} ${nameOfProject}`);
+    console.log(chalk.magenta(`Cloned started files into ${nameOfProject}`));
+    shell.cd(`${path}/${nameOfProject}`);
+    shell.exec(`npm i`);
+    shell.exec("code .");
+    glitchHacking.start();
+    await sleep();
+    glitchHacking.stop();
+    shell.exec("code .");
+    shell.exec("exit");
+}
