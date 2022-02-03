@@ -4,5 +4,9 @@
     
 ## TODO
 - [X] Make the basic questions;
-- [ ] Make all the things for all options;
-- [ ] Add a section in README teaching how to use
+- [X] Make all the things for all options;
+- [ ] Add a section in README teaching how to use;
+- [ ] Add to npm;
+
+## TODO in future
+- [ ] Add tailwind option;

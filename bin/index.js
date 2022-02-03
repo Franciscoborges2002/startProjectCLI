@@ -27,9 +27,9 @@ inquirer.prompt(questionNameOfTheProject).then((answersName) =>{//responses
             //Ask if uses typescript
             inquirer.prompt(questionTS).then(async (answersTS) =>{//responses
                 if(answersTS.typescript === 'Yes'){
-                    createProject(answersName.nameOfProject, 'VanillaTS');
+                    createProject(answersName.nameOfProject, answersFramework.framework + 'TS');
                 }else{
-                    createProject(answersName.nameOfProject, 'Vanilla');
+                    createProject(answersName.nameOfProject, answersFramework.framework);
                 }
             }).catch((err) =>{//if ocurrers errors
                 console.log(error('Error getting answer for typescript!') + '\n[ERROR]: ' + err);
@@ -38,9 +38,9 @@ inquirer.prompt(questionNameOfTheProject).then((answersName) =>{//responses
             //Ask if uses typescript
             inquirer.prompt(questionTS).then(async (answersTS) =>{//responses
                 if(answersTS.typescript === 'Yes'){
-                    createProject(answersName.nameOfProject, 'ReactJS');
+                    createProject(answersName.nameOfProject, answersFramework.framework + 'TS');
                 }else{
-                    createProject(answersName.nameOfProject, 'React');
+                    createProject(answersName.nameOfProject, answersFramework.framework);
                 }
             }).catch((err) =>{//if ocurrers errors
                 console.log(error('Error getting answer for typescript!') + '\n[ERROR]: ' + err);
@@ -49,26 +49,17 @@ inquirer.prompt(questionNameOfTheProject).then((answersName) =>{//responses
             //Ask if uses typescript
             inquirer.prompt(questionTS).then(async (answersTS) =>{//responses
                 if(answersTS.typescript === 'Yes'){
-                    createProject(answersName.nameOfProject, 'NextJSTS');
+                    createProject(answersName.nameOfProject, answersFramework.framework + 'TS');
                 }else{
-                    createProject(answersName.nameOfProject, 'NextJS');
+                    createProject(answersName.nameOfProject, answersFramework.framework);
                 }
             }).catch((err) =>{//if ocurrers errors
                 console.log(error('Error getting answer for typescript!') + '\n[ERROR]: ' + err);
             })
         }else if(answersFramework.framework === 'Svelte'){//If it's svelt
-            //Ask if uses typescript
-            inquirer.prompt(questionTS).then(async (answersTS) =>{//responses
-                if(answersTS.typescript === 'Yes'){
-                    //If is svelt and uses typescript
-                }else{
-                    //If is svelt and do not use typescript 
-                }
-            }).catch((err) =>{//if ocurrers errors
-                console.log(error('Error getting answer for typescript!') + '\n[ERROR]: ' + err);
-            })
+            createProject(answersName.nameOfProject, answersFramework.framework);
         }else if(answersFramework.framework === 'VueJS'){//If it's VueJS
-            createProject(answersName.nameOfProject, 'VueJS');
+            createProject(answersName.nameOfProject, answersFramework.framework);
         }else{
             inquirer.prompt(questionInfoAbout).then(async (answerInfoAbout)=>{
                 if(answerInfoAbout.infoAbout == 'Links Used'){
@@ -97,8 +88,9 @@ async function createProject(nameOfProject, link){
      await sleep();
     spinnerFolder.success();
     shell.exec(`git clone ${links.get(link)} ${nameOfProject}`);
-    console.log(chalk.magenta(`Cloned started files into ${nameOfProject}`));
+    console.log(chalk.magenta(`Started the creation of ${nameOfProject}`));
     shell.cd(`${path}/${nameOfProject}`);
+    console.log(chalk.magenta(`Installing dependencies ${nameOfProject}`));
     shell.exec(`npm i`);
     shell.exec("code .");
     glitchHacking.start();
