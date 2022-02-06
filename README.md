@@ -27,7 +27,7 @@ To make it more pretty used:
 - [X] Make the basic questions;
 - [X] Make all the things for all options;
 - [X] Add a section in README teaching how to use;
-- [ ] Add to npm;
+- [X] Add to npm;
 
 ### TODO in future:
 - [ ] Add tailwind option;
