@@ -2,12 +2,14 @@
 
 A simple CLI tool to start a JS project including some major frameworks or vanilla and you can include Typescript.
 
-## How to install?
+## How to use?
 
-Just run:
-![Install](./utils/images/carbon.png)
+Just run the follow command in the cmd in the folder of the program:
+```sh
+npm instal -g .
+```
     
-Then you can use the command 'spcli' in cmd.
+Then you can use the command 'spcli' in cmd wherever you want to create a project.
 
 ## Tech used:
 
