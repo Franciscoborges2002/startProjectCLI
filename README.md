@@ -1,6 +1,11 @@
 # CLI tool to start a JS project
 
-    A simple CLI tool to start a JS project including some major frameworks or vanilla.
+    A simple CLI tool to start a JS project including some major frameworks or vanilla and you can include Typescript.
+
+## How to install?
+
+    Just run:
+    (./utils/images/carbon.png)
     
 ## TODO
 - [X] Make the basic questions;
