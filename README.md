@@ -22,14 +22,7 @@ To make it more pretty used:
 - [Chalk Animation](https://github.com/bokub/chalk-animation)
 - [Nanospinner](https://github.com/usmanyunusov/nanospinner)
 
-
-## TODO:
-- [X] Make the basic questions;
-- [X] Make all the things for all options;
-- [X] Add a section in README teaching how to use;
-- [X] Add to npm;
-
-### TODO in future:
+### TODO next update:
 - [ ] Add tailwind option;
 
 ## License
